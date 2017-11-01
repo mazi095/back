@@ -1,0 +1,25 @@
+VMBundle\Entity\Product:
+  product1:
+    title: "Чай"
+    cost: 13
+    quantity: 10
+  product2:
+    title: "Кофе"
+    cost: 18
+    quantity: 20
+  product3:
+    title: "Кофе с молоком"
+    cost: 21
+    quantity: 20
+  product4:
+    title: "Сок"
+    cost: 35
+    quantity: 15
+  product5:
+    title: "Товар отсутствует"
+    cost: 35
+    quantity: 0
+  product6:
+    title: "Дорогой товар"
+    cost: 1000
+    quantity: 0

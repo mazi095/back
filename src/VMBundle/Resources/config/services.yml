@@ -1,0 +1,4 @@
+services:
+  vm.vending_machine_service:
+      class: VMBundle\VendingMachine\VendingMachineService
+      arguments: ['@Doctrine\ORM\EntityManagerInterface']

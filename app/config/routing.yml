@@ -1,3 +1,4 @@
-app:
-    resource: '@AppBundle/Controller/'
-    type: annotation
+vm:
+    resource: "@VMBundle/Controller/"
+    type:     annotation
+    prefix:   /

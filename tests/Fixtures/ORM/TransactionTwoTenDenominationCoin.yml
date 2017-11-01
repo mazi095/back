@@ -1,0 +1,11 @@
+VMBundle\Entity\Transaction:
+  transaction16:
+    type: 'input'
+    status: 'injected'
+    coinDenomination: 10
+  transaction17:
+    type: 'input'
+    status: 'injected'
+    coinDenomination: 10
+
+

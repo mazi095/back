@@ -1,0 +1,39 @@
+VMBundle\Entity\Transaction:
+  transaction{1..3}:
+    type: 'input'
+    status: 'injected'
+    coinDenomination: 2
+  transaction{4..10}:
+    type: 'input'
+    status: 'injected'
+    coinDenomination: 1
+  transaction11:
+    type: 'input'
+    status: 'injected'
+    coinDenomination: 5
+  transaction12:
+    type: 'input'
+    status: 'injected'
+    coinDenomination: 10
+  transaction13:
+    type: 'input'
+    status: 'returned'
+    coinDenomination: 5
+  transaction14:
+    type: 'input'
+    status: 'injected'
+    coinDenomination: 5
+  transaction15:
+    type: 'input'
+    status: 'injected'
+    coinDenomination: 1
+  transaction16:
+    type: 'input'
+    status: 'injected'
+    coinDenomination: 1
+  transaction17:
+    type: 'input'
+    status: 'injected'
+    coinDenomination: 1
+
+
