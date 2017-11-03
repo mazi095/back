@@ -45,9 +45,8 @@ class APIControllerTest extends WebTestCase
         $response = $this->client->getResponse();
         $this->assertTrue($response->isSuccessful());
 
-        $data = json_decode($response->getContent());
         $transaction =  $this->serializer->deserialize(
-            $data,
+            $response->getContent(),
             'VMBundle\Entity\Transaction',
             'json'
         );
@@ -64,9 +63,8 @@ class APIControllerTest extends WebTestCase
         $response = $this->client->getResponse();
         $this->assertTrue($response->isSuccessful());
 
-        $data = json_decode($response->getContent());
         $byProductResponse =  $this->serializer->deserialize(
-            $data,
+            $response->getContent(),
             'VMBundle\VendingMachine\DTO\BuyProductResponse',
             'json'
         );
@@ -90,9 +88,8 @@ class APIControllerTest extends WebTestCase
         $response = $this->client->getResponse();
         $this->assertTrue($response->isSuccessful());
 
-        $data = json_decode($response->getContent());
         $transactions =  $this->serializer->deserialize(
-            $data,
+            $response->getContent(),
             'array<VMBundle\Entity\Transaction>',
             'json'
         );
@@ -114,9 +111,8 @@ class APIControllerTest extends WebTestCase
         $response = $this->client->getResponse();
         $this->assertTrue($response->isSuccessful());
 
-        $data = json_decode($response->getContent());
         $transactions =  $this->serializer->deserialize(
-            $data,
+            $response->getContent(),
             'array<VMBundle\Entity\Transaction>',
             'json'
         );
@@ -137,9 +133,8 @@ class APIControllerTest extends WebTestCase
         $response = $this->client->getResponse();
         $this->assertTrue($response->isSuccessful());
 
-        $data = json_decode($response->getContent());
         $products=  $this->serializer->deserialize(
-            $data,
+            $response->getContent(),
             'array<VMBundle\Entity\Product>',
             'json'
         );

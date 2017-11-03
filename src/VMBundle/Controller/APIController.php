@@ -21,8 +21,9 @@ class APIController extends Controller
         $serializer = $this->get("jms_serializer");
         $service = $this->get("vm.vending_machine_service");
         $transaction = $service->addTransaction($denomination);
+        $response = new JsonResponse();
 
-        return new JsonResponse($serializer->serialize($transaction, 'json'));
+        return $response->setContent($serializer->serialize($transaction, 'json'));
     }
 
     /**
@@ -36,8 +37,9 @@ class APIController extends Controller
         $product = $service->byProduct($product);
         $oddMoney = $service->getOutputTransactions();
         $byProductResponse = new BuyProductResponse($product, $oddMoney);
+        $response = new JsonResponse();
 
-        return new JsonResponse($serializer->serialize($byProductResponse, 'json'));
+        return $response->setContent($serializer->serialize($byProductResponse, 'json'));
     }
 
     /**
@@ -49,8 +51,9 @@ class APIController extends Controller
         $serializer = $this->get("jms_serializer");
         $service = $this->get("vm.vending_machine_service");
         $transactions = $service->returnCoins();
+        $response = new JsonResponse();
 
-        return new JsonResponse($serializer->serialize($transactions, 'json'));
+        return $response->setContent($serializer->serialize($transactions, 'json'));
     }
 
     /**
@@ -62,8 +65,9 @@ class APIController extends Controller
         $serializer = $this->get("jms_serializer");
         $service = $this->get("vm.vending_machine_service");
         $transactions = $service->getBalance();
+        $response = new JsonResponse();
 
-        return new JsonResponse($serializer->serialize($transactions, 'json'));
+        return $response->setContent($serializer->serialize($transactions, 'json'));
     }
 
     /**
@@ -75,7 +79,8 @@ class APIController extends Controller
         $serializer = $this->get("jms_serializer");
         $service = $this->get("vm.vending_machine_service");
         $transactions = $service->getProducts();
+        $response = new JsonResponse();
 
-        return new JsonResponse($serializer->serialize($transactions, 'json'));
+        return $response->setContent($serializer->serialize($transactions, 'json'));
     }
 }
