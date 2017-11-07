@@ -1,4 +1,2 @@
 vm:
-    resource: "@VMBundle/Controller/"
-    type:     annotation
-    prefix:   /
+    resource: "@VMBundle/Resources/config/routing.yml"

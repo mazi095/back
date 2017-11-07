@@ -1,0 +1,13 @@
+VMBundle\Entity\Coin:
+  coin_1:
+    denomination: 1
+    quantity: 100
+  coin_2:
+    denomination: 2
+    quantity: 100
+  coin_3:
+    denomination: 5
+    quantity: 100
+  coin_4:
+    denomination: 10
+    quantity: 100

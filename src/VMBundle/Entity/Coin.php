@@ -3,6 +3,7 @@
 namespace VMBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as JMS;
 
 /**
  * Coin
@@ -14,6 +15,8 @@ class Coin
 {
     /**
      * @var int
+     * 
+     * @JMS\Type("integer")
      *
      * @ORM\Column(name="id", type="integer")
      * @ORM\Id
@@ -23,6 +26,8 @@ class Coin
 
     /**
      * @var int
+     * 
+     * @JMS\Type("integer")
      *
      * @ORM\Column(name="denomination", type="integer", unique=true)
      */
@@ -30,6 +35,8 @@ class Coin
 
     /**
      * @var int
+     * 
+     * @JMS\Type("integer")
      *
      * @ORM\Column(name="quantity", type="integer")
      */

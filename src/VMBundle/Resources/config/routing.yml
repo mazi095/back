@@ -1,0 +1,9 @@
+api:
+    resource: "@VMBundle/Controller/APIController.php"
+    type:     annotation
+    prefix:   /
+
+system_api:
+    resource: "@VMBundle/Controller/SystemAPIController.php"
+    type: annotation
+    prefix: /system/
