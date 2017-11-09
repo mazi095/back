@@ -14,7 +14,7 @@ class APIController extends Controller
 {
     /**
      * @Route("/add_coin/{denomination}", defaults={"_format": "json"})
-     * @Method({"POST"})
+     * @Method({"GET"})
      */
     public function addCoinAction($denomination)
     {
