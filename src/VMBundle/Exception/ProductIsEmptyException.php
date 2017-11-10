@@ -1,15 +1,11 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: sergey
- * Date: 30.10.17
- * Time: 18:39
- */
+
 
 namespace VMBundle\Exception;
 
+use Symfony\Component\HttpKernel\Exception\ConflictHttpException;
 
-class ProductIsEmptyException extends \RuntimeException
+class ProductIsEmptyException extends ConflictHttpException
 {
 
 }

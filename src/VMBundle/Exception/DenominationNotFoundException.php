@@ -2,8 +2,9 @@
 
 namespace VMBundle\Exception;
 
+use Symfony\Component\HttpKernel\Exception\HttpException;
 
-class DenominationNotFoundException extends \RuntimeException
+class DenominationNotFoundException extends HttpException
 {
 
 }
