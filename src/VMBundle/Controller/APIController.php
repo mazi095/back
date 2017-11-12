@@ -8,6 +8,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use VMBundle\Entity\Product;
+use VMBundle\Exception\VMLogicException;
 use VMBundle\VendingMachine\DTO\BuyProductResponse;
 
 class APIController extends Controller
@@ -20,7 +21,12 @@ class APIController extends Controller
     {
         $serializer = $this->get("jms_serializer");
         $service = $this->get("vm.vending_machine_service");
-        $transaction = $service->addTransaction($denomination);
+        try{
+            $transaction = $service->addTransaction($denomination);
+        }catch (VMLogicException $e){
+
+            return new JsonResponse($e->getMessage(),$e->getCode());
+        }
         $response = new JsonResponse();
 
         return $response->setContent($serializer->serialize($transaction, 'json'));
@@ -34,9 +40,14 @@ class APIController extends Controller
     {
         $serializer = $this->get("jms_serializer");
         $service = $this->get("vm.vending_machine_service");
-        $product = $service->byProduct($product);
-        $oddMoney = $service->getOutputTransactions();
-        $byProductResponse = new BuyProductResponse($product, $oddMoney);
+        try{
+            $product = $service->byProduct($product);
+            $oddMoney = $service->getOutputTransactions();
+            $byProductResponse = new BuyProductResponse($product, $oddMoney);
+        }catch (VMLogicException $e){
+
+            return new JsonResponse($e->getMessage(),$e->getCode());
+        }
         $response = new JsonResponse();
 
         return $response->setContent($serializer->serialize($byProductResponse, 'json'));
